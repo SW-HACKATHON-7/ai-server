@@ -23,6 +23,13 @@ class ReviewData(BaseModel):
     suggested_alternative: str
 
 class AlalyzeResponse(BaseModel):
+    score: int
+    pros1: str
+    pros2: str
+    cons1: str
+    cons2: str
+    frequentTone1: str
+    frequentTone2: str
     response: List[ReviewData]
 
 class SuggestionData(BaseModel):
