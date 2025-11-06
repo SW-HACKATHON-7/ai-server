@@ -83,7 +83,14 @@ async def analyze_conversation(request: ConversationRequest):
         parsed_data = json.loads(response)
 
         return AlalyzeResponse(
-            response=parsed_data["response"],
+            score=parsed_data["score"],
+            pros1=parsed_data["pros1"],
+            pros2=parsed_data["pros2"],
+            cons1=parsed_data["cons1"],
+            cons2=parsed_data["cons2"],
+            frequentTone1=parsed_data["frequentTone1"],
+            frequentTone2=parsed_data["frequentTone2"],
+            response=parsed_data["response"]
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
